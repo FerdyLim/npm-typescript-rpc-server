@@ -1,0 +1,24 @@
+{
+  "name": "@modulae.systems/rpc-server",
+  "version": "0.0.5",
+  "description": "An RPC server module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "publish": "tsc && npm publish --access public"
+  },
+  "author": "Ferdy Lim",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.1",
+    "@types/node": "^22.15.3"
+  }
+}
