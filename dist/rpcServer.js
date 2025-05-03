@@ -9,8 +9,9 @@ app.use(express.json());
 let callbackFunc;
 app.post("/rpc", async (req, res) => {
     const content = req.body;
+    const headers = req.headers;
     try {
-        let response = await callbackFunc(content);
+        let response = await callbackFunc(content, headers);
         res.json(response);
     }
     catch (e) {
