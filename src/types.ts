@@ -1,9 +1,11 @@
+import { IncomingHttpHeaders } from "http";
+
 export interface ApiConfig {
     port: number;
     requestCallback: RequestCallback;
 }
 
-export type RequestCallback = (request: RpcRequestModel) => Promise<RpcResponseModel>
+export type RequestCallback = (body: RpcRequestModel, headers: IncomingHttpHeaders) => Promise<RpcResponseModel>
 
 export interface RpcRequestModel {
     method: string;
@@ -19,4 +21,8 @@ export interface RpcError {
     code: number;
     description: string;
     debug?: any;
+}
+
+export interface RpcHeaders {
+    [key: string]: string;
 }

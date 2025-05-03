@@ -11,8 +11,9 @@ let callbackFunc: RequestCallback | undefined;
 
 app.post("/rpc", async (req: express.Request, res: express.Response) => {
     const content: RpcRequestModel = req.body;
+    const headers = req.headers;
     try {
-        let response = await callbackFunc(content);
+        let response = await callbackFunc(content, headers);
         res.json(response)
     } catch (e) {
         const errResponse: RpcResponseModel = {
