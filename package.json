@@ -2,6 +2,15 @@
   "name": "@modulae.systems/rpc-server",
   "version": "0.1.0",
   "description": "An RPC server module",
+  "keywords": [
+    "rpc",
+    "rpc-server"
+  ],
+  "homepage": "http://ferdy.sg",
+  "bugs": {
+    "url": "https://github.com/FerdyLim/npm-typescript-rpc-server/issues",
+    "email": "contact@ferdinand.sg"
+  },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -15,7 +24,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "publish": "tsc && npm publish --access public"
   },
-  "author": "Ferdy Lim",
+  "author": "Ferdy Lim <contact@ferdinand.sg> (http://ferdy.sg)",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^16.5.0",
