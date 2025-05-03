@@ -9,7 +9,7 @@ npm i @modulae.systems/rpc-server
 - [@modulae.systems/rpc-client](https://www.npmjs.com/package/@modulae.systems/rpc-client)
 
 # Usage
-On your .ts file
+### On your .ts file
 ```
 import { initRpcWithApiCallback } from "@modulae.systems/rpc-server";
 import { RpcRequestModel, RpcResponseModel } from "@modulae.systems/rpc-server/dist/types";
@@ -33,9 +33,16 @@ initRpcWithApiCallback(async (request: RpcRequestModel) => {
 );
 ```
 
-Add this line to your ```.env``` file
+### Add this line to your ```.env``` file
 ```
 ...
 RPC_PORT=80 # or any port you want
 ...
 ```
+
+## Future features (My personal TODO list)
+1. Custom Headers support (by v1)
+    - Verifying API keys
+    - Verifying Tokens (AccessToken/RefreshToken etc)
+    - Maybe JWT token management?
+2. Add Sample Projects to showcase what this module can do
