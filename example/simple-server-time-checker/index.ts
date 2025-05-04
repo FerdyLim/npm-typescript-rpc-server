@@ -4,7 +4,7 @@ import { RpcObjects } from "./models";
 import { getAlive, getAuth, getTime } from "./functions";
 import * as jwt from "jsonwebtoken"
 
-initRpcWithApiCallback(async (method, headers) => {
+initRpcWithApiCallback(async (method, body) => {
     if (method == RpcObjects.Methods.auth) {
         return getAuth(body);
     } else if (method == RpcObjects.Methods.alive) {
@@ -17,7 +17,7 @@ initRpcWithApiCallback(async (method, headers) => {
         },
         data: null,
     };
-},async (method, headers) => {
+},async (method, body) => {
     if (method == RpcObjects.Methods.time) {
         return getTime();
     }
@@ -30,6 +30,7 @@ initRpcWithApiCallback(async (method, headers) => {
     };
 },async (method, token) => {
     try {
+        const key = process.env.JWT_SECRET ?? "nokey";
         const tokenData = jwt.verify(token, key) as jwt.JwtPayload;
         if (tokenData.data == "authenticated") {
             if (method == RpcObjects.Methods.time) {
