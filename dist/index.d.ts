@@ -1,1 +1,0 @@
-export { initRpcWithApiCallback } from "./rpcServer";
