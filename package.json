@@ -1,6 +1,6 @@
 {
   "name": "@modulae.systems/rpc-server",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "An RPC server module",
   "keywords": [
     "rpc",
