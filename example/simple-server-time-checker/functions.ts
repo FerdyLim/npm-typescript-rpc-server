@@ -6,8 +6,7 @@ import { IncomingHttpHeaders } from "http";
 
 dotenv.config();
 
-export function getAuth(body: RpcRequestModel): RpcResponseModel {
-    const data = body.data as RpcObjects.RequestDataAuth;
+export function getAuth(data: RpcObjects.RequestDataAuth): RpcResponseModel {
     if (data.authKey == process.env.AUTH_KEY) {
         const response: RpcObjects.ResponseDataAuth = {
             accessToken: jwt.sign(

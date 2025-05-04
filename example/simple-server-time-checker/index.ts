@@ -4,9 +4,9 @@ import { RpcObjects } from "./models";
 import { getAlive, getAuth, getTime } from "./functions";
 import * as jwt from "jsonwebtoken"
 
-initRpcWithApiCallback(async (method, body) => {
+initRpcWithApiCallback(async (method, data) => {
     if (method == RpcObjects.Methods.auth) {
-        return getAuth(body);
+        return getAuth(data);
     } else if (method == RpcObjects.Methods.alive) {
         return getAlive();
     }
@@ -17,7 +17,7 @@ initRpcWithApiCallback(async (method, body) => {
         },
         data: null,
     };
-},async (method, body) => {
+},async (method, data) => {
     if (method == RpcObjects.Methods.time) {
         return getTime();
     }
