@@ -37,6 +37,7 @@ initRpcWithApiCallback(async (body, headers) => {
 ```
 ...
 RPC_PORT=80 # or any port you want
+AUTH_KEY=3256531b3d0ad5b534259135bca2c1f4 # any random string
 ...
 ```
 
