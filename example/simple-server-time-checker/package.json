@@ -1,0 +1,20 @@
+{
+  "name": "simple-server-time-checker",
+  "version": "1.0.0",
+  "description": "Example of roc-server usage to check server time",
+  "main": "index.ts",
+  "scripts": {
+    "test": "npx ts-node index.ts"
+  },
+  "author": "Ferdy Lim",
+  "license": "ISC",
+  "dependencies": {
+    "@modulae.systems/rpc-server": "^0.1.2",
+    "@types/jsonwebtoken": "^9.0.9",
+    "jsonwebtoken": "^9.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.3",
+    "ts-node": "^10.9.2"
+  }
+}
