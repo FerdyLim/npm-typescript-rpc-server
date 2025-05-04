@@ -9,7 +9,7 @@
   "author": "Ferdy Lim",
   "license": "ISC",
   "dependencies": {
-    "@modulae.systems/rpc-server": "^0.1.11",
+    "@modulae.systems/rpc-server": "^1.0.0",
     "@types/jsonwebtoken": "^9.0.9",
     "jsonwebtoken": "^9.0.2"
   },

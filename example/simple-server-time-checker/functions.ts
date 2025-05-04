@@ -43,57 +43,12 @@ export function getAlive(): RpcResponseModel {
     }
 }
 
-export function getTime(header: IncomingHttpHeaders): RpcResponseModel {
-    try {
-        if (header.authorization) {
-            const token = header.authorization.split(" ")[1]; // remove bearer or Bearer
-            const key = process.env.JWT_SECRET ?? "nokey";
-            const tokenData = jwt.verify(token, key) as jwt.JwtPayload;
-            if (tokenData.data == "authenticated") {
-                const response: RpcObjects.ResponseDataTime = {
-                    currentTime: new Date(),
-                }
-                return {
-                    error: null,
-                    data: response,
-                }
-            } else {
-                return {
-                    error: {
-                        code: 403,
-                        description: "You do not have rights to access this method",
-                    },
-                    data: null,
-                }
-            }
-        } else {
-            return {
-                error: {
-                    code: 401,
-                    description: "Not Authorised",
-                },
-                data: null,
-            }
-        }
-    } catch (error) {
-        console.error("JWT VERIFY ERROR: ",JSON.stringify(error))
-        if (error.name == "TokenExpiredError") {
-            return {
-                error: {
-                    code: 401,
-                    description: "Token expired",
-                    debug: error,
-                },
-                data: null,
-            }
-        } else {
-            return {
-                error: {
-                    code: 401,
-                    description: "Invalid token",
-                },
-                data: null,
-            }
-        }
+export function getTime(): RpcResponseModel {
+    const response: RpcObjects.ResponseDataTime = {
+        currentTime: new Date(),
+    }
+    return {
+        error: null,
+        data: response,
     }
 }
