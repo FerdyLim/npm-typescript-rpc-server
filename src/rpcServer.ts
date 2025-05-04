@@ -1,11 +1,13 @@
 import * as express from "express";
 import * as dotenv from "dotenv";
+import * as cors from "cors";
 import { RequestCallback, RpcRequestModel, RpcResponseModel } from "./types";
 
 dotenv.config();
 
 const app: express.Express = express();
 app.use(express.json());
+app.use(cors());
 
 let callbackFunc: RequestCallback | undefined;
 

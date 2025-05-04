@@ -27,6 +27,7 @@
   "author": "Ferdy Lim <contact@ferdinand.sg> (http://ferdy.sg)",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^16.5.0",
     "express": "^5.1.0"
   },
